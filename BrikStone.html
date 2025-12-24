@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brick&Stone</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --yellow:#ffcc00;
+  --bg:#0c0c0c;
+  --panel:#151515;
+  --text:#eaeaea;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  font-family:'Montserrat', Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* HEADER */
+header {
+  background:#000;
+  border-bottom:3px solid var(--yellow);
+}
+
+.header-inner {
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+header img { height:60px; }
+
+nav a {
+  color:#fff;
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:500;
+}
+
+nav a:hover,
+nav a.active {
+  color:var(--yellow);
+}
+
+/* HERO */
+.hero {
+  background:
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.9)),
+    url("image/fon.jpg") center/cover no-repeat;
+  padding:120px 20px;
+  text-align:center;
+}
+
+.hero img { width:130px; margin-bottom:20px; }
+
+.hero h1 {
+  font-size:48px;
+  color:var(--yellow);
+}
+
+.hero p {
+  max-width:850px;
+  margin:auto;
+  font-size:18px;
+  line-height:1.7;
+}
+
+/* SECTION */
+.section {
+  max-width:1200px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+.section-title {
+  text-align:center;
+  color:var(--yellow);
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+/* SERVICES */
+.services {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.service {
+  background:var(--panel);
+  padding:30px;
+  border-radius:16px;
+  text-align:center;
+}
+
+/* REALISATIONS COVER */
+.realisation-cover {
+  max-width:700px;
+  margin:0 auto;
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  cursor:pointer;
+  box-shadow:0 15px 35px rgba(0,0,0,.5);
+}
+
+.realisation-cover img {
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  transition:.4s;
+}
+
+.realisation-cover:hover img {
+  transform:scale(1.08);
+}
+
+.cover-text {
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.55);
+  color:var(--yellow);
+  font-size:26px;
+  font-weight:700;
+  text-transform:uppercase;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  z-index:999;
+}
+
+.lightbox img {
+  max-width:90%;
+  max-height:75%;
+  border-radius:14px;
+}
+
+.lightbox-controls {
+  margin-top:20px;
+  display:flex;
+  align-items:center;
+  gap:25px;
+  color:white;
+  font-size:28px;
+}
+
+.lightbox-controls span {
+  cursor:pointer;
+  user-select:none;
+}
+
+.lightbox-controls span:hover {
+  color:var(--yellow);
+}
+
+.counter {
+  font-size:16px;
+  opacity:.8;
+}
+
+/* FORM */
+.form-box {
+  max-width:430px;
+  margin:auto;
+  background:var(--panel);
+  padding:30px;
+  border-radius:18px;
+}
+
+input, textarea, button {
+  width:100%;
+  padding:12px;
+  margin-bottom:14px;
+  border:none;
+  border-radius:10px;
+}
+
+input, textarea {
+  background:#0f0f0f;
+  color:white;
+}
+
+button {
+  background:var(--yellow);
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer {
+  background:#000;
+  padding:25px;
+  text-align:center;
+  font-size:14px;
+  color:#aaa;
+}
+
+@media (max-width:600px) {
+  .hero h1 { font-size:36px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <img src="Brick.png">
+    <nav>
+      <a href="#accueil" class="active">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#recrutement">Recrutement</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="accueil">
+  <img src="Brick.png">
+  <h1>Brick&Stone</h1>
+  <p>
+    Entreprise spécialisée en maçonnerie, rénovation et construction en Belgique.
+    <br><br>
+    Nous recherchons des travailleurs qualifiés et des entreprises partenaires.
+  </p>
+</section>
+
+<section class="section" id="services">
+  <h2 class="section-title">Nos Services</h2>
+  <div class="services">
+    <div class="service">Maçonnerie</div>
+    <div class="service">Construction</div>
+    <div class="service">Rénovation</div>
+  </div>
+</section>
+
+<section class="section" id="realisations">
+  <h2 class="section-title">Nos Réalisations</h2>
+
+  <div class="realisation-cover" id="openGallery">
+    <img src="image/foto8.jpg">
+    <div class="cover-text">Voir nos travaux</div>
+  </div>
+</section>
+
+<section class="section" id="recrutement">
+  <h2 class="section-title">Contact</h2>
+
+  <div class="form-box">
+    <form action="https://formsubmit.co/iliukvasea1@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="Nom" placeholder="Votre nom" required>
+      <input type="text" name="Téléphone" placeholder="+32 ..." required>
+      <textarea name="Message" placeholder="Votre message" required></textarea>
+      <button>Envoyer</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2025 Brick&Stone — Belgique
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img">
+  <div class="lightbox-controls">
+    <span id="prev">❮</span>
+    <span class="counter" id="counter">1 / 6</span>
+    <span id="next">❯</span>
+    <span id="close">✕</span>
+  </div>
+</div>
+
+<script>
+const images = [
+  "image/foto1.jpg",
+  "image/foto2.jpg",
+  "image/foto3.jpg",
+  "image/foto4.jpg",
+  "image/foto5.jpg",
+  "image/foto6.jpg",
+  "image/foto7.jpg",
+  "image/foto8.jpg",
+  "image/foto9.jpg",
+  "image/foto10.jpg",
+  "image/foto11.jpg",
+  "image/foto12.jpg",
+  "image/foto13.jpg",
+  "image/foto14.jpg",
+  "image/foto15.jpg",
+  "image/foto16.jpg",
+
+];
+
+let index = 0;
+let timer;
+
+const lightbox = document.getElementById("lightbox");
+const img = document.getElementById("lightbox-img");
+const counter = document.getElementById("counter");
+
+function show() {
+  img.src = images[index];
+  counter.textContent = (index + 1) + " / " + images.length;
+}
+
+function openGallery() {
+  lightbox.style.display = "flex";
+  show();
+  timer = setInterval(() => {
+    index = (index + 1) % images.length;
+    show();
+  }, 4000);
+}
+
+function closeGallery() {
+  lightbox.style.display = "none";
+  clearInterval(timer);
+}
+
+document.getElementById("openGallery").onclick = openGallery;
+document.getElementById("close").onclick = closeGallery;
+document.getElementById("next").onclick = () => { index = (index+1)%images.length; show(); };
+document.getElementById("prev").onclick = () => { index = (index-1+images.length)%images.length; show(); };
+
+/* Swipe */
+let startX = 0;
+img.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+img.addEventListener("touchend", e => {
+  let endX = e.changedTouches[0].clientX;
+  if (endX < startX - 50) document.getElementById("next").click();
+  if (endX > startX + 50) document.getElementById("prev").click();
+});
+</script>
+
+</body>
+</html>
